@@ -70,8 +70,16 @@ function localgov_gin_login_page_attachments_alter(&$page) {
     if ($configData['brand_image']['use_default'] != "0") {
       $page['#attached']['library'][] = 'localgov_gin_login/wallpaper';
       $page['#attached']['drupalSettings']['localgov_gin_login']['path'] = $fileUrlGenerator->generateAbsoluteString($module_path . '/images/wallpapers');
-      $town_halls_feed = $fileUrlGenerator->generateAbsoluteString($module_path . '/js/town-halls.json');
-      $page['#attached']['drupalSettings']['localgov_gin_login']['town_halls'] = json_decode(file_get_contents($town_halls_feed));
+      try {
+        $uri = 'https://raw.githubusercontent.com/andybroomfield/localgov_gin_login/refs/heads/1.x/js/town-halls.json';
+        $response = \Drupal::httpClient()->get($uri, array('headers' => array('Accept' => 'application/json')));
+        $page['#attached']['drupalSettings']['localgov_gin_login']['town_halls'] = json_decode($response->getBody());
+        $page['#attached']['drupalSettings']['localgov_gin_login']['path'] = 'https://raw.githubusercontent.com/andybroomfield/localgov_gin_login/refs/heads/1.x/images/wallpapers';
+      }
+      catch (RequestException $e) {
+        $town_halls_feed = $fileUrlGenerator->generateAbsoluteString($module_path . '/js/town-halls.json');
+        $page['#attached']['drupalSettings']['localgov_gin_login']['town_halls'] = json_decode(file_get_contents($town_halls_feed));
+      }
     }
   }
 }
