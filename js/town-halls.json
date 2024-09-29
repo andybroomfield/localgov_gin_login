@@ -1,0 +1,18 @@
+{
+  "wallpapers" : [
+    {
+      "image": "brighton-town-hall-70pc.jpg",
+      "name" : "Brighton town hall",
+      "author": "Andy Broomfield",
+      "license": "CC BY-SA 4.0",
+      "license_link": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "image": "hove-town-hall-coat-of-arms-70pc.jpg",
+      "name" : "Hove town hall",
+      "author": "Andy Broomfield",
+      "license": "CC BY-SA 4.0",
+      "license_link": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  ]
+}

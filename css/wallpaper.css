@@ -1,0 +1,13 @@
+.locagov-gin-login--wallpaper--description {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+  max-width: 50%;
+  background-color: var(--gin-bg-layer);
+  color: var(--gin-color-text);
+  margin: 0;
+  padding: 10px;
+  z-index: 999;
+  pointer-events: all;
+}

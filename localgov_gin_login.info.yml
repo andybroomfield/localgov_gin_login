@@ -1,0 +1,7 @@
+name: 'Localgov Gin Login'
+type: module
+description: 'Localgov gin login module'
+package: Localgov
+core_version_requirement: ^10 || ^11
+dependencies:
+  - gin_login:gin_login
