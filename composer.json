@@ -1,0 +1,12 @@
+{
+  "name": "localgovdrupal/localgov_gin_login",
+  "description": "POC custom login screen based on Gin Login",
+  "type": "drupal-module",
+  "homepage": "https://github.com/localgovdrupal/localgov_gin_login",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "require": {
+      "drupal/gin_login": "^2.0",
+      "php": ">=8.0.0"
+  }
+}
