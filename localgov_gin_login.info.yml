@@ -1,7 +1,8 @@
 name: 'Localgov Gin Login'
 type: module
 description: 'Localgov gin login module'
-package: Localgov
+package: Localgov Drupal - Experimental
 core_version_requirement: ^10 || ^11
+lifecycle: experimental
 dependencies:
   - gin_login:gin_login
