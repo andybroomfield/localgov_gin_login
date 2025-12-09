@@ -10,7 +10,7 @@
  */
 function localgov_gin_login_route_definitions_alter(&$route_definitions) {
   if (\Drupal::moduleHandler()->moduleExists('gin_login')) {
-    foreach($route_definitions as &$route_definition) {
+    foreach ($route_definitions as &$route_definition) {
       if (in_array('gin_login_preprocess_ginlogin', $route_definition['preprocess functions'] ?? [], TRUE)) {
         $route_definition['preprocess functions'][] = 'localgov_gin_login_preprocess_ginlogin';
       }
@@ -62,7 +62,7 @@ function localgov_gin_login_page_attachments_alter(&$page) {
     $page['#attached']['library'][] = 'localgov_gin_login/login';
 
     // Remove the existing gin_login wallpaper library.
-    $page['#attached']['library'] = array_filter($page['#attached']['library'], function($item) {
+    $page['#attached']['library'] = array_filter($page['#attached']['library'], function ($item) {
       return $item != 'gin_login/wallpaper' ? TRUE : FALSE;
     });
 
